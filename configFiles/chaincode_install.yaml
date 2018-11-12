@@ -18,12 +18,12 @@ spec:
       - name: chaincodeinstall1
         image: hyperledger/fabric-tools:x86_64-1.1.0
         imagePullPolicy: Always
-        command: ["sh", "-c", "echo $GOPATH; cp -r /shared/artifacts/chaincode $GOPATH/src/; ls $GOPATH/src; peer chaincode install -n ${CHAINCODE_NAME} -v ${CHAINCODE_VERSION} -p chaincode_example02/"]
+        command: ["sh", "-c", "echo $GOPATH; cp -r /shared/artifacts/chaincode $GOPATH/src/; ls $GOPATH/src; cat $GOPATH/src/chaincode_example02/chaincode_example02.go; peer chaincode install -n ${CHAINCODE_NAME} -v ${CHAINCODE_VERSION} -p chaincode_example02/"]
         env:
         - name: CHAINCODE_NAME
           value: "cc"
         - name: CHAINCODE_VERSION
-          value: "1.0"
+          value: "1.3"
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
@@ -46,7 +46,7 @@ spec:
         - name: CHAINCODE_NAME
           value: "cc"
         - name: CHAINCODE_VERSION
-          value: "1.0"
+          value: "1.3"
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
@@ -69,7 +69,7 @@ spec:
         - name: CHAINCODE_NAME
           value: "cc"
         - name: CHAINCODE_VERSION
-          value: "1.0"
+          value: "1.3"
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
@@ -92,7 +92,7 @@ spec:
         - name: CHAINCODE_NAME
           value: "cc"
         - name: CHAINCODE_VERSION
-          value: "1.0"
+          value: "1.3"
         - name: FABRIC_CFG_PATH
           value: /etc/hyperledger/fabric
         - name: CORE_PEER_MSPCONFIGPATH
